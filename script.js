@@ -1,7 +1,8 @@
 const allButtons = document.querySelector('main');
 const counterContent = document.querySelector('.counter-content');
 const usersContainer = document.querySelector('.users');
-
+const themeSwitch =document.querySelector(".theme-switch");
+const body = document.querySelector("body")
 
 let counter = 0;
 
@@ -64,4 +65,10 @@ usersContainer.insertAdjacentHTML('afterbegin', showUser)
 
 
 }
+
+
+themeSwitch.addEventListener("click", ()=>{
+  body.classList.toggle("darkmode")
+  console.log("hello")
+})
 
