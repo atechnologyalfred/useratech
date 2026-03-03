@@ -7,10 +7,7 @@ body {
   margin: 0 auto;
 }
 
-h1 {
-  margin-bottom: 2rem;
 
-}
 
 main {
   display: flex;
@@ -120,3 +117,29 @@ ion-icon:first-child {
   color:#f4f6f8;
 }
 
+.spin {
+  font-size: 2rem;
+  display: none;
+}
+
+@media (max-width: 768px){
+  h1 {
+    font-size: 1.2rem;
+  }
+  body {
+    width: 20rem;
+  }
+  .users-container, .counter {
+  background-color: #fff;
+  border-radius: 1.6rem;
+  width: 96%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+}

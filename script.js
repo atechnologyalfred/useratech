@@ -41,18 +41,28 @@ function countingMinus (){
   counterContent.textContent = counter;
 }
 function countingReset (){
-  counterContent.textContent = 0
+ counter = 0;
+ counterContent.textContent = counter;
 }
 
 
 //functions for fetch
 async function  fetchApi () {
-  usersContainer.innerHTML = ''
+  const spinner = document.querySelector(".spin");
+  spinner.style.display = "block";
+
+  try {
+    usersContainer.innerHTML = ''
   const res = await fetch('https://jsonplaceholder.typicode.com/users');
   const data = await res.json();
+  console.log(data)
   
-data.forEach((user)=> {
+  data.forEach((user)=> {
+    
+    
+    
     const showUser = `
+
     <div class="user">
         <h2 >${user.name}</h2>
         <p class="email">Email: ${user.email}</p>
@@ -60,15 +70,16 @@ data.forEach((user)=> {
         <p class="company">Company: ${user.company}</p>
     </div>
     `
-usersContainer.insertAdjacentHTML('afterbegin', showUser)
-})
-
-
+    usersContainer.innerHTML += showUser;
+  })
+  }catch (err) {
+    console.error(err)
+  } finally {
+  spinner.style.display = "none";
+  }
 }
 
 
 themeSwitch.addEventListener("click", ()=>{
   body.classList.toggle("darkmode")
-  console.log("hello")
 })
-
