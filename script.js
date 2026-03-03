@@ -59,15 +59,15 @@ async function  fetchApi () {
   
   data.forEach((user)=> {
     
-    
+    const {name, email, phone, company:{name : companyName}} = user;
     
     const showUser = `
 
     <div class="user">
-        <h2 >${user.name}</h2>
-        <p class="email">Email: ${user.email}</p>
-        <p class="phone">Phone: ${user.phone}</p>
-        <p class="company">Company: ${user.company}</p>
+        <h2 >${name}</h2>
+        <p class="email">Email: ${email}</p>
+        <p class="phone">Phone: ${phone}</p>
+        <p class="company">Company: ${companyName}</p>
     </div>
     `
     usersContainer.innerHTML += showUser;
